@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function (create) {
-    const lookcountry = document.getElementById('lookupcountry');
+    const lookcountry = document.getElementById('lookup');
     const lookcity = document.getElementById('lookcities');
     var result = document.getElementById('result');
     var country = document.getElementById('country');

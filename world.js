@@ -1,17 +1,19 @@
 document.addEventListener('DOMContentLoaded', function (create) {
-    const look = document.getElementById('lookup');
+    const lookcountry = document.getElementById('lookupcountry');
+    const lookcity = document.getElementById('lookcities');
     var result = document.getElementById('result');
     var country = document.getElementById('country');
 
-    look.addEventListener("click", function (e) {
+    lookcountry.addEventListener("click", function (e) {
         e.preventDefault();
         fetch('world.php?country=' + country.value)
             .then(response => response.text())
             .then(countrylist => {
-                displayData(countrylist);
+                //displayData(countrylist);
+                result.innerHTML = countrylist;
             })
 
-        function displayData(data) {
+        /*function displayData(data) {
             result.textContent = "";
             var str = "";
             var lst = document.createElement('ul');
@@ -32,6 +34,6 @@ document.addEventListener('DOMContentLoaded', function (create) {
                 var item = document.createElement('li');
                 item.appendChild(document.createTextNode(data));
                 return item;
-        }
+        }*/
     })
 })

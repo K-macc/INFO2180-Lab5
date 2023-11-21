@@ -1,1 +1,103 @@
 /* Add your own styles */
+h1 {
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgb(192, 226, 240);
+}
+
+#controls {
+    text-align: center;
+    justify-content: center;
+    justify-self: center;
+}
+
+#country {
+    width: 600px;
+    height: 30px;
+    display: block;
+    margin-left: 225px;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    margin: 30px auto;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    cursor:pointer;
+}
+
+#country:hover {
+    background-color: #f9faf9b9;
+}
+
+#lookupcountry {
+    background-color: rgb(64, 226, 64);
+    color: white;
+    width: 120px;
+    height: 30px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#lookupcountry:hover {
+    background-color: #45a049;
+}
+
+#lookupcities {
+    background-color: rgb(8, 127, 167);
+    color: white;
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#lookupcities:hover {
+    background-color: rgb(12, 85, 109);
+}
+
+body {
+    background-image: url('Global.jpg');
+}
+
+#result {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+th[scope="col"] {
+    border: 2px solid black;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+th {
+    border: 2px solid black;
+    padding: 5px;
+    text-align: left;
+    font-weight: normal;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(141, 177, 189);
+    transition: background-color 0.3s ease;
+}
+
+tr:nth-child(even):hover {
+    background-color: rgb(199, 230, 240);
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(203, 203, 245);
+    transition: background-color 0.3s ease;
+}
+
+tr:nth-child(odd):hover{
+    background-color: rgb(226, 226, 250);
+}

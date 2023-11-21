@@ -5,13 +5,15 @@ $password = 'password123';
 $dbname = 'world';
 
 $country = $_GET['country'];
+$country_filter = filter_var($country, FILTER_SANITIZE_STRING);
 $city = isset($_GET['lookup']) ? $_GET['lookup'] : null;
+$city_filter = filter_var($city, FILTER_SANITIZE_STRING);
 
 $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-if (empty($city)){
-  $stmt = $conn->query("SELECT * FROM countries WHERE `name` LIKE '%$country%'");
+if (empty($city_filter)){
+  $stmt = $conn->query("SELECT * FROM countries WHERE `name` LIKE '%$country_filter%'");
 }else{
-  $stmt = $conn->query("SELECT * FROM countries cs join cities c on c.country_code = cs.code WHERE cs.name LIKE '%$country%'");
+  $stmt = $conn->query("SELECT * FROM countries cs join cities c on c.country_code = cs.code WHERE cs.name LIKE '%$country_filter%'");
 }
 
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -20,7 +22,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <table>
   <tr>
-    <?php if (empty($city)): ?>
+    <?php if (empty($city_filter)): ?>
       <th scope="col">Name</th>
       <th scope="col">Continent</th>
       <th scope="col">Independence</th>
@@ -33,7 +35,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
   </tr>
   <?php foreach ($results as $row): ?>
     <tr>
-      <?php if (empty($city)): ?>
+      <?php if (empty($city_filter)): ?>
         <th><?= $row['name'] ?></th>
         <th><?= $row['continent'] ?></th>
         <th><?= $row['independence_year'] ?></th>

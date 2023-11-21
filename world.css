@@ -24,7 +24,7 @@ h1 {
     margin: 30px auto;
     border-radius: 8px;
     transition: background-color 0.3s ease;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 #country:hover {
@@ -98,6 +98,6 @@ tr:nth-child(odd) {
     transition: background-color 0.3s ease;
 }
 
-tr:nth-child(odd):hover{
+tr:nth-child(odd):hover {
     background-color: rgb(226, 226, 250);
 }
